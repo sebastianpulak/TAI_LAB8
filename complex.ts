@@ -1,0 +1,30 @@
+class Complex{
+    private real: number;
+    private imaginary: number;
+
+    constructor(real:number, imaginary:number){
+        this.real = real;
+        this.imaginary = imaginary;
+    }
+    add(x:Complex):Complex{
+        return new Complex(this.real+x.real, this.imaginary+x.imaginary)
+    }
+    substract(x:Complex):Complex{
+        return new Complex(this.real-x.real, this.imaginary-x.imaginary)
+    }
+    modul(){
+        return Math.sqrt((this.real*this.real)+(this.imaginary*this.imaginary));
+    }
+    toString(){
+        console.log("Real: ",this.real,"Imaginary: ",this.imaginary);
+    }
+}
+
+let com = new Complex(2,3);
+let com2 = new Complex(4,5);
+let com3 = com.add(com2);
+com3.toString();
+let com4 = com3.substract(com);
+com4.toString();
+let moduleCom = com4.modul();
+console.log(moduleCom)
