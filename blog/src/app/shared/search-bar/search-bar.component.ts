@@ -7,7 +7,7 @@ import {Router, ActivatedRoute} from '@angular/router';
  styleUrls: ['./search-bar.component.css']
 })
 export class SearchBarComponent implements OnInit {
- filterText: string;
+ public filterText: string;
 
  @Output() name = new EventEmitter<string>();
 

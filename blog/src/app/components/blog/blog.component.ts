@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class BlogComponent implements OnInit {
     @Input() filterText: string;
+    @Input() id: number;
     public items$: any;
 
   constructor(private service: DataService, private router: Router) { }
