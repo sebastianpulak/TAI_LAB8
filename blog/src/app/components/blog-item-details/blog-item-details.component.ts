@@ -25,11 +25,11 @@ export class BlogItemDetailsComponent implements OnInit {
   	});
 	if (id) {
   	  this.dataService.getById(id).subscribe(res => {
-      this.image = res['image'];
+      this.image = res['url'];
     	this.text = res['text'];
   	});
 	} else {
-  	   this.id = 1;
+  	   this.id = 0;
 	}
   }
 
