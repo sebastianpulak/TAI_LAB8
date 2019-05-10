@@ -21,13 +21,13 @@ public class PostController {
 
 
 
-    @GetMapping("/api/posts")
-    public List<Post> getAllPosts(){
-        return postService.getAll();
-    }
-
-    @GetMapping("/api/posts/{id}")
-    public Post get(@PathVariable int id){
-        return postService.get(id);
-    }
+//    @GetMapping("/api/posts")
+//    public List<Post> getAllPosts(){
+//        return postService.getAll();
+//    }
+//
+//    @GetMapping("/api/posts/{id}")
+//    public Post get(@PathVariable int id){
+//        return postService.get(id);
+//    }
 }
