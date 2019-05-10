@@ -1,4 +1,4 @@
-import {HttpHeaders, HttpClient} from '@angular/common/http';
+import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {map} from 'rxjs/operators';
 
@@ -15,14 +15,16 @@ export class AuthenticationService {
     const basicAuthHeaderString = 'Basic ' + window.btoa(username + ':' + password);
  
     return this.http.get(
-    `http://localhost:8080/basicauth`).pipe(
-    map(
-      data => {
-        sessionStorage.setItem(AUTHENTICATED_USER, username);
-        sessionStorage.setItem(TOKEN, basicAuthHeaderString);
-        return data;
-      }
-    )
+      'http://localhost:8080/basicauth',{headers: {
+        "Authorization" : basicAuthHeaderString
+        }}).pipe(
+      map(
+        data => {
+          localStorage.setItem(AUTHENTICATED_USER, username);
+          localStorage.setItem(TOKEN, basicAuthHeaderString);
+          return data;
+        }
+      )
     );
   }
  

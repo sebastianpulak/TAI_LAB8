@@ -26,7 +26,7 @@ handleBasicAuthLogin() {
   .subscribe(
     data => {
       console.log(data);
-      this.router.navigate(['home', this.username]);
+      this.router.navigate(['blog']);
       this.invalidLogin = false;
     },
     error => {
